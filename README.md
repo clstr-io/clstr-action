@@ -1,12 +1,12 @@
-# LittleClusters Test GitHub Action
+# clstr.io Test GitHub Action
 
 _Learn distributed systems by building them from scratch._
 
-A GitHub Action for testing [LittleClusters](https://littleclusters.com/) challenges in your CI/CD pipeline.
+A GitHub Action for testing [clstr.io](https://clstr.io/) challenges in your CI/CD pipeline.
 
 ## Quick Start
 
-Add this workflow to your repository at `.github/workflows/littleclusters.yaml`:
+Add this workflow to your repository at `.github/workflows/clstr.yaml`:
 
 ```yaml
 name: Test
@@ -22,11 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: littleclusters/test@main
+      - uses: clstr-io/clstr-action@main
 ```
 
-The action runs `lc test --so-far` on every push to main and on pull requests.
+The action runs `clstr test --so-far` on every push to main and on pull requests.
 
 ## Usage
 
-For the full usage documentation, please see [this guide](https://littleclusters.com/guides/ci-cd/#github-actions).
+For the full usage documentation, please see [this guide](https://docs.clstr.io/guides/ci-cd/#github-actions).

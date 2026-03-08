@@ -1,13 +1,13 @@
 name: Test
-description: Test coding challenges with lc
+description: Test coding challenges with clstr
 
 inputs:
   working-directory:
-    description: Directory containing lc.state
+    description: Directory containing clstr.state
     required: false
     default: '.'
-  lc-version:
-    description: Version of lc to install
+  clstr-version:
+    description: Version of clstr to install
     required: false
     default: 'v0.2.0'
 
@@ -19,17 +19,17 @@ runs:
       with:
         go-version: '1.25'
 
-    - name: Cache lc
+    - name: Cache clstr
       uses: actions/cache@v5
-      id: cache-lc
+      id: cache-clstr
       with:
-        path: ~/go/bin/lc
-        key: lc-${{ runner.os }}-${{ runner.arch }}-${{ inputs.lc-version }}
+        path: ~/go/bin/clstr
+        key: clstr-${{ runner.os }}-${{ runner.arch }}-${{ inputs.clstr-version }}
 
-    - name: Install lc
-      if: steps.cache-lc.outputs.cache-hit != 'true'
+    - name: Install clstr
+      if: steps.cache-clstr.outputs.cache-hit != 'true'
       shell: bash
-      run: go install github.com/littleclusters/lc/cmd/lc@${{ inputs.lc-version }}
+      run: go install github.com/clstr-io/clstr/cmd/clstr@${{ inputs.clstr-version }}
 
     - name: Run tests
       shell: bash
