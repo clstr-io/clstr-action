@@ -6,16 +6,16 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
-# Check if lc.state exists
-if [ ! -f "lc.state" ]; then
-  echo -e "${RED}lc.state not found in current directory${NC}"
-  echo "Make sure you're running this action in a directory with a LittleClusters challenge."
+# Check if clstr.state exists
+if [ ! -f "clstr.state" ]; then
+  echo -e "${RED}clstr.state not found in current directory${NC}"
+  echo "Make sure you're running this action in a directory with a clstr.io challenge."
   exit 1
 fi
 
-# Run tests using lc
+# Run tests using clstr
 echo "Running tests..."
-if lc test --so-far; then
+if clstr test --so-far; then
   echo ""
   echo -e "${GREEN}All tests passed!${NC}"
   exit 0
