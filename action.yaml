@@ -3,7 +3,7 @@ description: Test coding challenges with clstr
 
 inputs:
   working-directory:
-    description: Directory containing clstr.state
+    description: Directory containing clstr.yaml
     required: false
     default: '.'
   clstr-version:
